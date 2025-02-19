@@ -7,6 +7,14 @@
   --primary-color: #ae7aff;
 }
 
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background: var(--dark-color);
   color: var(--ligth-color);
@@ -14,12 +22,12 @@ body {
 
 .skill-tag {
   padding: 4px 8px;
-  margin-right: 5px;
   border: 1px solid var(--ligth-color);
   border-radius: 2px;
   font-size: 12px;
   display: inline;
   font-weight: 700;
+  height: 24px;
 }
 
 .btn {
