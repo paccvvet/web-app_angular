@@ -15,4 +15,7 @@ export class ProfileService {
   getMe() {
     return this.http.get<Profile>(`${this.baseApiUrl}account/me`);
   }
+  getSubsribersShortList() {
+    return;
+  }
 }

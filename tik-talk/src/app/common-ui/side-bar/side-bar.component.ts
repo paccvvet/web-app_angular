@@ -1,15 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 import { CommonModule } from '@angular/common';
+import { SubscriberCardComponent } from './subscriber-card/subscriber-card.component';
+import { RouterLink } from '@angular/router';
+import { ProfileService } from '../../data/services/profile.service';
 
 @Component({
   selector: 'app-side-bar',
   standalone: true,
-  imports: [SvgIconComponent, CommonModule],
+  imports: [
+    SvgIconComponent,
+    CommonModule,
+    SubscriberCardComponent,
+    RouterLink,
+  ],
   templateUrl: './side-bar.component.html',
   styleUrl: './side-bar.component.scss',
 })
 export class SideBarComponent {
+  profileService = inject(ProfileService);
+  me = this.profileService.getMe;
   menuItems = [
     {
       label: 'Моя страница',
