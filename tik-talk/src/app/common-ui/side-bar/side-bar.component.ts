@@ -9,4 +9,22 @@ import { CommonModule } from '@angular/common';
   templateUrl: './side-bar.component.html',
   styleUrl: './side-bar.component.scss',
 })
-export class SideBarComponent {}
+export class SideBarComponent {
+  menuItems = [
+    {
+      label: 'Моя страница',
+      icon: 'home',
+      link: '',
+    },
+    {
+      label: 'Чаты',
+      icon: 'chat',
+      link: 'chat',
+    },
+    {
+      label: 'Поиск',
+      icon: 'search',
+      link: 'search',
+    },
+  ];
+}

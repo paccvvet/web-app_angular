@@ -26,11 +26,13 @@
   &:focus-visible {
     background: var(--hover-color);
     color: var(--primary-color);
+    .menu-item svg {
+      color: var(--primary-color);
+    }
   }
 }
 
 .menu-item svg {
   width: 16px;
   height: 16px;
-  color: aqua;
 }
