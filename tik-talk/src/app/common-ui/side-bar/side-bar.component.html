@@ -19,6 +19,17 @@
   <a [routerLink]="['/subscribers']" class="to-subscribers-link meduim-text"
     >Все Подписчики</a
   >
-
   <svg icon="arrow" class="to-subscribers-icon"></svg>
 </div>
+<footer class="sidebar__footer">
+  @if(me(); as me){ @if(me.avatarUrl){
+  <img [src]="me.avatarUrl | imgUrl" alt="" />
+  }@else {
+  <img src="/assets/svg/avatar-placeholder.svg" alt="" />
+  }
+  <div class="medium-text username-text">{{ me.username }}</div>
+  <a [routerLink]="['settings']" class="settings-btn">
+    <svg icon="settings"></svg>
+  </a>
+  }
+</footer>

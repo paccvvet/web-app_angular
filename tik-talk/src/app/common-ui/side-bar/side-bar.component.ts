@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { SubscriberCardComponent } from './subscriber-card/subscriber-card.component';
 import { RouterLink } from '@angular/router';
 import { ProfileService } from '../../data/services/profile.service';
+import { firstValueFrom } from 'rxjs';
+import { ImgUrlPipe } from '../../helpers/pipes/img-url.pipe';
 
 @Component({
   selector: 'app-side-bar',
@@ -13,6 +15,7 @@ import { ProfileService } from '../../data/services/profile.service';
     CommonModule,
     SubscriberCardComponent,
     RouterLink,
+    ImgUrlPipe,
   ],
   templateUrl: './side-bar.component.html',
   styleUrl: './side-bar.component.scss',
@@ -22,7 +25,7 @@ export class SideBarComponent {
 
   subscribers$ = this.profileService.getSubsribersShortList();
 
-  me = this.profileService.getMe;
+  me = this.profileService.me;
   menuItems = [
     {
       label: 'Моя страница',
@@ -40,4 +43,7 @@ export class SideBarComponent {
       link: 'search',
     },
   ];
+  ngOnInit() {
+    firstValueFrom(this.profileService.getMe());
+  }
 }
