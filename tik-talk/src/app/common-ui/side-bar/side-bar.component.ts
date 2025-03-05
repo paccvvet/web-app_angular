@@ -19,6 +19,9 @@ import { ProfileService } from '../../data/services/profile.service';
 })
 export class SideBarComponent {
   profileService = inject(ProfileService);
+
+  subscribers$ = this.profileService.getSubsribersShortList();
+
   me = this.profileService.getMe;
   menuItems = [
     {
