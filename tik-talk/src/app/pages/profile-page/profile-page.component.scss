@@ -15,3 +15,48 @@
   height: 16px;
   color: var(--dark-color);
 }
+.profile-page__body {
+  display: grid;
+  grid-gap: 64px;
+  grid-template-columns: 1fr 350px;
+}
+.subscriber-avatar-btn {
+  img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+  }
+}
+.subscribers-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.to-subscribers-search {
+  border-radius: 50%;
+  background: var(--ligth-color);
+  height: 14px;
+  width: 14px;
+  position: relative;
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 8px;
+    background: var(--dark-color);
+    top: 50%;
+    left: 50%;
+  }
+  &:before {
+    transform: translateY(-50%) translateX(-50%);
+  }
+  &:after {
+    transform: translateY(-50%) translateX(-50%) rotate(90deg);
+  }
+}
+.stack-wrapper {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
